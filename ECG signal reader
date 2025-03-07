@@ -1,0 +1,23 @@
+// ECG Signal Reader
+
+void setup() {
+  // Initialize the serial communication
+  Serial.begin(9600);
+
+  // Setup for leads off detection
+  pinMode(10, INPUT); // LO +
+  pinMode(11, INPUT); // LO -
+}
+
+void loop() {
+  // Check if leads are off
+  if ((digitalRead(10) == 1) || (digitalRead(11) == 1)) {
+    Serial.println('!');
+  } else {
+    // Send the value of analog input A0
+    Serial.println(analogRead(A0));
+  }
+
+  // Small delay to avoid data saturation
+  delay(1);
+}
