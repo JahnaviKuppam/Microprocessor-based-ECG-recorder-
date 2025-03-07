@@ -1,0 +1,57 @@
+This guide explains how to wire the ECG sensor module to your Arduino for proper data collection and signal logging.
+
+Components Needed
+
+Arduino board (e.g., Arduino Uno)
+
+ECG sensor module
+
+SD card module (optional, for logging data)
+
+Jumper wires
+
+Pin Connections
+
+ECG Sensor Module to Arduino:
+
+LO+ (Leads Off Positive) → Digital Pin 10
+
+LO- (Leads Off Negative) → Digital Pin 11
+
+Analog Output (ECG Signal) → Analog Pin A0
+
+GND (Ground) → GND
+
+VCC (Power Supply) → 3.3V or 5V (depending on your module)
+
+SD Card Module to Arduino (if used):
+
+CS (Chip Select) → Digital Pin 4 (or your preferred CS pin)
+
+MOSI → Digital Pin 11 (on Uno)
+
+MISO → Digital Pin 12 (on Uno)
+
+SCK (Clock) → Digital Pin 13 (on Uno)
+
+VCC → 5V
+
+GND → GND
+
+WIRING DIAGRAM:
+ECG Module          Arduino
+-------------------------------
+LO+                D10
+LO-                D11
+Analog Out         A0
+GND                GND
+VCC                5V
+
+SD Card Module     Arduino
+-------------------------------
+CS                 D4
+MOSI               D11
+MISO               D12
+SCK                D13
+VCC                5V
+GND                GND
